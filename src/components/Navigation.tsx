@@ -48,36 +48,19 @@ export default function Navigation() {
           </Link>
 
           <div className="hidden md:flex items-center gap-1">
-            {isLandingPage ? (
-              <button
-                onClick={() => scrollToSection('apps')}
-                className="relative px-4 py-2 text-sm font-medium text-gray-700 hover:text-vexto-primary transition-colors duration-300 group"
-              >
-                <span className="relative z-10 tracking-wide">Apps</span>
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-vexto-secondary to-vexto-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-              </button>
-            ) : (
-              <Link
-                to="/#apps"
-                className="relative px-4 py-2 text-sm font-medium text-gray-700 hover:text-vexto-primary transition-colors duration-300 group"
-              >
-                <span className="relative z-10 tracking-wide">Apps</span>
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-vexto-secondary to-vexto-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-              </Link>
-            )}
-            <Link
-              to="/blog"
-              className="relative px-4 py-2 text-sm font-medium text-gray-700 hover:text-vexto-primary transition-colors duration-300 group"
-            >
-              <span className="relative z-10 tracking-wide">Blog</span>
-              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-vexto-secondary to-vexto-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-            </Link>
             <Link
               to="/about"
               className="relative px-4 py-2 text-sm font-medium text-gray-700 hover:text-vexto-secondary transition-colors duration-300 group"
             >
               <span className="relative z-10 tracking-wide">About</span>
               <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-vexto-accent to-vexto-secondary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            </Link>
+            <Link
+              to="/blog"
+              className="relative px-4 py-2 text-sm font-medium text-gray-700 hover:text-vexto-primary transition-colors duration-300 group"
+            >
+              <span className="relative z-10 tracking-wide">Blog</span>
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-vexto-secondary to-vexto-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
             </Link>
             <Link
               to="/faq"
@@ -108,24 +91,14 @@ export default function Navigation() {
       {mobileMenuOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 shadow-lg animate-fade-in">
           <div className="px-6 py-6 space-y-2">
-            {isLandingPage ? (
-              <button
-                onClick={() => scrollToSection('apps')}
-                className="block w-full text-left text-sm font-medium text-gray-700 hover:text-vexto-primary hover:bg-vexto-light/50 transition-all duration-300 py-3 px-4 rounded-lg animate-menu-stagger"
-                style={{ animationDelay: '0ms' }}
-              >
-                Apps
-              </button>
-            ) : (
-              <Link
-                to="/#apps"
-                onClick={() => setMobileMenuOpen(false)}
-                className="block w-full text-left text-sm font-medium text-gray-700 hover:text-vexto-primary hover:bg-vexto-light/50 transition-all duration-300 py-3 px-4 rounded-lg animate-menu-stagger"
-                style={{ animationDelay: '0ms' }}
-              >
-                Apps
-              </Link>
-            )}
+            <Link
+              to="/about"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block w-full text-left text-sm font-medium text-gray-700 hover:text-vexto-secondary hover:bg-vexto-light/50 transition-all duration-300 py-3 px-4 rounded-lg animate-menu-stagger"
+              style={{ animationDelay: '0ms' }}
+            >
+              About
+            </Link>
             <Link
               to="/blog"
               onClick={() => setMobileMenuOpen(false)}
@@ -135,18 +108,10 @@ export default function Navigation() {
               Blog
             </Link>
             <Link
-              to="/about"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block w-full text-left text-sm font-medium text-gray-700 hover:text-vexto-secondary hover:bg-vexto-light/50 transition-all duration-300 py-3 px-4 rounded-lg animate-menu-stagger"
-              style={{ animationDelay: '100ms' }}
-            >
-              About
-            </Link>
-            <Link
               to="/faq"
               onClick={() => setMobileMenuOpen(false)}
               className="block w-full text-left text-sm font-medium text-gray-700 hover:text-vexto-secondary hover:bg-vexto-light/50 transition-all duration-300 py-3 px-4 rounded-lg animate-menu-stagger"
-              style={{ animationDelay: '150ms' }}
+              style={{ animationDelay: '100ms' }}
             >
               FAQ
             </Link>
@@ -154,7 +119,7 @@ export default function Navigation() {
               to="/contact"
               onClick={() => setMobileMenuOpen(false)}
               className="block w-full text-left text-sm font-medium text-gray-700 hover:text-vexto-secondary hover:bg-vexto-light/50 transition-all duration-300 py-3 px-4 rounded-lg animate-menu-stagger"
-              style={{ animationDelay: '200ms' }}
+              style={{ animationDelay: '150ms' }}
             >
               Contact
             </Link>
