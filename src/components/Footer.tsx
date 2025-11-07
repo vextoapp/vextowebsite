@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Github, Linkedin, ArrowUp, Send } from 'lucide-react';
+import { Github, Linkedin, ArrowUp, Send, Instagram } from 'lucide-react';
 import XIcon from './XIcon';
 import { Link } from 'react-router-dom';
 import EmailSignupForm from './EmailSignupForm';
@@ -126,7 +126,7 @@ export default function Footer() {
               <h4 className="font-semibold mb-4 text-white">Connect</h4>
               <div className="flex gap-3 mb-6">
                 <a
-                  href="https://x.com/vextoapp"
+                  href="https://x.com/vextoapps"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative p-2 rounded-lg bg-white/5 text-white/70 hover:text-vexto-secondary hover:bg-white/10 transition-all duration-slower backdrop-blur-sm"
@@ -153,6 +153,16 @@ export default function Footer() {
                   aria-label="LinkedIn"
                 >
                   <Linkedin size={20} className="relative z-10" />
+                  <span className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-slower bg-gradient-to-br from-vexto-secondary/20 to-transparent"></span>
+                </a>
+                <a
+                  href="https://www.instagram.com/vextoapps/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative p-2 rounded-lg bg-white/5 text-white/70 hover:text-vexto-secondary hover:bg-white/10 transition-all duration-slower backdrop-blur-sm"
+                  aria-label="Instagram"
+                >
+                  <Instagram size={20} className="relative z-10" />
                   <span className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-slower bg-gradient-to-br from-vexto-secondary/20 to-transparent"></span>
                 </a>
               </div>
