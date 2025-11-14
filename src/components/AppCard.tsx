@@ -53,8 +53,16 @@ export default function AppCard({ app }: AppCardProps) {
         onMouseLeave={() => setShowTooltip(false)}
       >
         <div className="flex items-start justify-between mb-4">
-          <div className="w-12 h-12 bg-gradient-to-br from-vexto-secondary/20 to-vexto-primary/20 rounded-lg flex items-center justify-center text-2xl transition-transform duration-smooth group-hover:scale-110">
-            {app.icon}
+          <div className="w-12 h-12 bg-gradient-to-br from-vexto-secondary/20 to-vexto-primary/20 rounded-lg flex items-center justify-center text-2xl transition-transform duration-smooth group-hover:scale-110 overflow-hidden">
+            {app.icon.startsWith('/') || app.icon.includes('.') ? (
+              <img
+                src={app.icon}
+                alt={`${app.name} icon`}
+                className="w-full h-full object-contain p-1.5"
+              />
+            ) : (
+              <span>{app.icon}</span>
+            )}
           </div>
           <div className="flex items-center gap-2">
             {getStatusBadge()}
